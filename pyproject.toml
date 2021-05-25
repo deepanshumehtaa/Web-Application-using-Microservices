@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "django-with-docker-nginx-redis-gunicorn"
+version = "0.1.0"
+description = ""
+authors = ["Ali Harby"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.3"
+mysqlclient = "^2.0.3"
+lorem = "^0.1.1"
+redis = "^3.5.3"
+django-redis = "^4.12.1"
+gunicorn = "^20.1.0"
+dj-database-url = "^0.5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

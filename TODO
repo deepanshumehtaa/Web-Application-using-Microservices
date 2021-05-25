@@ -1,0 +1,15 @@
+- create the project on github and clone it locally
+- create the application using poetry
+- installing dependencies
+- create the docker network by using docker network create --subnet=170.100.0.2/15 test-net
+- create the database docker network using the command:
+    - docker run -d --name app-db --cpus 0.5 --memory 512m -e MYSQL_USER=ali -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=test_db --net app-net mysql:5.7
+- create the python docker network using the command:
+    - docker run -itd --name test-app -v %cd%:/code --cpus 0.5 --memory 512m -p 8090:8000 --workdir /code --net app-net -e DOCKER_CONTAINER_ID=1 python:3.9
+- go to the project files from: docker exec -it test-app bash
+- install poetry from: pip3 install poetry
+- install dependencies using poetry
+- create a test app using: poetry run python manage.py startapp testapp
+- make migrate and migrations
+
+
